@@ -45,6 +45,7 @@
                     <label for="name__input" class="name__label main__label upperText">cardholder name</label>
                     <input type="text" class="name__input main__input" id="name__input" placeholder="e.g. Jane Appleseed">
                     <p class="main__error errBlank">Can't be blank</p>
+                    <p class="main__error errFormat">Wrong format, enter Your name</p>
                 </div>
                 <div class="main__number main__box">
                     <label for="number__input" class="number__label main__label upperText">card number</label>
@@ -59,7 +60,7 @@
                             <input type="number" class="inp__mm main__input" placeholder="MM" onKeyPress="if(this.value.length==2) return false;">
                             <input type="number" class="inp__yy main__input" placeholder="YY" onKeyPress="if(this.value.length==2) return false;">
                             <p class="main__error errBlank">Can't be blank</p>
-                            <p class="main__error errFormat">Wrong format, enter a valid month and year</p>
+                            <p class="main__error errFormat">Wrong format, enter a valid month</p>
                         </div>
                     </div>
                     <div class="input__cvc main__box">
