@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive card | Frontend Mentor Challenge</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <main>
+        <!-- Banner Section -->
+        <div class="banner">
+            <div class="banner__cards">
+                <div class="card__front">
+                    <img src="./assets/bg-card-front.png" alt="Front of card" class="front__img">
+                    <div class="front__content">
+                        <div class="content__icons">
+                            <span class="icon__filled"></span>
+                            <span class="icon__outline"></span>
+                        </div>
+                        <h2 class="content__cNumber">0000 0000 0000 0000</h2>
+                        <div class="content__bottom">
+                            <p class="bottom__name upperText">Jane Appleseed</p>
+                            <p class="bottom__exp">00/00</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card__back">
+                    <img src="./assets/bg-card-back.png" alt="Back of card" class="back__img">
+                    <div class="back__content">
+                        <p class="back__cvc">000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="main">
+            <div class="main__form">
+                <div class="main__name main__box">
+                    <label for="name__input" class="name__label main__label upperText">cardholder name</label>
+                    <input type="text" class="name__input main__input" id="name__input" placeholder="e.g. Jane Appleseed">
+                    <p class="main__error errBlank">Can't be blank</p>
+                </div>
+                <div class="main__number main__box">
+                    <label for="number__input" class="number__label main__label upperText">card number</label>
+                    <input type="text" class="number__input main__input" id="number__input" placeholder="e.g. 1234 5678 9123 0000" onKeyPress="if(this.value.length==19) return false;">
+                    <p class="main__error errBlank">Can't be blank</p>
+                    <p class="main__error errFormat">Wrong format, enter full card number</p>
+                </div>
+                <div class="main__bottomInputs main__box">
+                    <div class="input__exp">
+                        <p class="exp__label main__label upperText">exp. date (mm/yy)</p>
+                        <div class="exp__inp">
+                            <input type="number" class="inp__mm main__input" placeholder="MM" onKeyPress="if(this.value.length==2) return false;">
+                            <input type="number" class="inp__yy main__input" placeholder="YY" onKeyPress="if(this.value.length==2) return false;">
+                            <p class="main__error errBlank">Can't be blank</p>
+                            <p class="main__error errFormat">Wrong format, enter a valid month and year</p>
+                        </div>
+                    </div>
+                    <div class="input__cvc main__box">
+                        <label for="cvc__input" class="cvc__label main__label upperText">cvc</label>
+                        <input type="number" class="cvc__input main__input" id="cvc__input" placeholder="e.g. 123" onKeyPress="if(this.value.length==3) return false;">
+                        <p class="main__error errBlank">Can't be blank</p>
+                        <p class="main__error errFormat">Wrong format, enter full CVC number</p>
+                    </div>
+                </div>
+                <div class="main__confirm main__box">
+                    <button class="confirm__btn main__btn">Confirm</button>
+                </div>
+            </div>
+    
+            <div class="main__success">
+                <div class="scs__iconBx">
+                    <img src="./assets/icon-complete.svg" alt="completed icon" class="scs__icon">
+                </div>
+                <h1 class="scs__title upperText">thank you!</h1>
+                <p class="scs__text">We've added your card details</p>
+                <button class="scs__continue main__btn">Continue</button>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- JS -->
+    <script src="./main.js"></script>
+    
+</body>
+</html>
