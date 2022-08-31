@@ -99,7 +99,7 @@ function validateForm(){
         cvcInput.parentElement.classList.remove('blankErr');
         cvcInput.parentElement.classList.remove('formatErr');
     }
-    
+
 
     // CHECK FOR ERRORS
     if(callCount.length > 0){
@@ -111,4 +111,94 @@ function validateForm(){
 
     // Reset errors count for new validation
     callCount = [];
+}
+
+// Change screen
+function formValidated(){
+    const mainForm = document.querySelector('.main__form');
+    const mainSuccess = document.querySelector('.main__success');
+    const scsContinueBtn = document.querySelector('.scs__continue');
+    let allInputs = document.querySelectorAll('input');
+
+    mainForm.style.display = "none";
+    mainSuccess.style.display = "flex";
+
+    scsContinueBtn.addEventListener('click', () => {
+        mainSuccess.style.display = "none";
+        mainForm.style.display = "grid";
+        
+        allInputs.forEach((aInput) => {
+            aInput.value = "";
+        })
+
+        numberText.textContent = "0000 0000 0000 0000";
+        nameText.textContent = "Jane Appleseed";
+        expMmText.textContent = "00";
+        expYyText.textContent = "00";
+        cvcText.textContent = "000";
+    })
+}
+
+
+// LIVE TYPING
+// Card Number
+const numberText = document.querySelector('.content__cNumber');
+
+numberInput.addEventListener('input', (typedNumber) => {
+    inputHandler(typedNumber, numberText, numberInput, '0000 0000 0000 000');
+})
+numberInput.addEventListener('propertychange', (typedNumber) => {
+    inputHandler(typedNumber, numberText, numberInput, '0000 0000 0000 000');
+})
+
+// Cardholder name
+const nameText = document.querySelector('.bottom__name');
+
+nameInput.addEventListener('input', (typedNumber) => {
+    inputHandler(typedNumber, nameText, nameInput, 'Jane Appleseed');
+})
+nameInput.addEventListener('propertychange', (typedNumber) => {
+    inputHandler(typedNumber, nameText, nameInput, 'Jane Appleseed');
+})
+
+// // Exp. date - MM
+const expMmText = document.querySelector('.exp__mm');
+
+expMmInput.addEventListener('input', (typedNumber) => {
+    inputHandler(typedNumber, expMmText, expMmInput, '00');
+})
+expMmInput.addEventListener('propertychange', (typedNumber) => {
+    inputHandler(typedNumber, expMmText, expMmInput, '00');
+})
+
+// Exp. date - YY
+const expYyText = document.querySelector('.exp__yy');
+
+expYyInput.addEventListener('input', (typedNumber) => {
+    inputHandler(typedNumber, expYyText, expYyInput, '00');
+})
+expYyInput.addEventListener('propertychange', (typedNumber) => {
+    inputHandler(typedNumber, expYyText, expYyInput, '00');
+})
+
+// CVC
+const cvcText = document.querySelector('.back__cvc');
+
+cvcInput.addEventListener('input', (typedNumber) => {
+    inputHandler(typedNumber, cvcText, cvcInput, '000');
+})
+cvcInput.addEventListener('propertychange', (typedNumber) => {
+    inputHandler(typedNumber, cvcText, cvcInput, '000');
+})
+
+
+// InputHandler function
+function inputHandler(typedNumber, finalElement, typedInput, emptyText){
+    let number = typedNumber.target.value;
+
+    finalElement.textContent = number;
+
+    if(typedInput.value.length == 0){
+        finalElement.textContent = emptyText;
+    }
 }

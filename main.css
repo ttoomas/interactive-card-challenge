@@ -123,6 +123,10 @@ h1, h2, h3, h4, h5, h6, p{
     letter-spacing: 1.25px;
     word-spacing: 0.0625rem;
 }
+.bottom__exp{
+    display: flex;
+    flex-direction: row;
+}
 
 .back__content{
     position: absolute;
