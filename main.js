@@ -145,10 +145,10 @@ function formValidated(){
 const numberText = document.querySelector('.content__cNumber');
 
 numberInput.addEventListener('input', (typedNumber) => {
-    inputHandler(typedNumber, numberText, numberInput, '0000 0000 0000 000');
+    inputHandler(typedNumber, numberText, numberInput, '0000 0000 0000 0000');
 })
 numberInput.addEventListener('propertychange', (typedNumber) => {
-    inputHandler(typedNumber, numberText, numberInput, '0000 0000 0000 000');
+    inputHandler(typedNumber, numberText, numberInput, '0000 0000 0000 0000');
 })
 
 // Cardholder name
